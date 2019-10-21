@@ -10,8 +10,12 @@ class Categories extends Model
     use SoftDeletes;
     protected $table = 'categories';
     protected $primaryKey = 'id';
-    protected $fillable = ['categories_name', 'categories_desc'];
-    protected $guarded = ['created_at', 'updated_at'];
+    protected $fillable = [
+        'categories_name', 'categories_desc',
+    ];
+    protected $guarded = [
+        'created_at', 'updated_at',
+    ];
     public $dates = ['deleted_at'];
     public $timestamps = true;
 

@@ -11,8 +11,12 @@ class Event extends Model
     use SoftDeletes;
     protected $table = 'event';
     protected $primaryKey = 'id';
-    protected $casts = ['id' => 'string'];
-    protected $guarded = ['created_at', 'updated_at'];
+    protected $casts = [
+        'id' => 'string'
+    ];
+    protected $guarded = [
+        'created_at', 'updated_at',
+    ];
     public $dates = ['deleted_at'];
     public $timestamps = true;
     

@@ -2,38 +2,34 @@
 
 namespace App;
 
+use Laravel\Passport\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class User extends Authenticatable
 {
-    use Notifiable;
-
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
+    use Notifiable, HasApiTokens, Notifiable;
+    protected $table = 'user';
+    protected $primaryKey = 'id';
     protected $fillable = [
-        'name', 'email', 'password',
+        'id','first_name', 'last_name', 'date_of_birth', 'email', 'password', 'address', 'gender', 'phone'
     ];
-
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
     protected $hidden = [
         'password', 'remember_token',
     ];
-
-    /**
-     * The attributes that should be cast to native types.
-     *
-     * @var array
-     */
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    protected $guarded = [
+        'created_at', 'updated_at',
+    ];
+    public $dates = [ 'deleted_at' ];
+    public $timestamps = true;
+    
+    public function registration()
+    {
+        return $this->hasMany('App\registration');
+    }
 }

@@ -16,8 +16,8 @@ class RegistrationTableSeeder extends Seeder
         DB::table('registration')->insert([
             [
                 'id' => Uuid::uuid4()->getHex(),
-                'users_id' => '2c3e1f8d231d4800b67862da0695cdf6',
-                'event_id' => '1500ae41ff124f55a8317ef8c72602f2',
+                'user_id' => 1,
+                'event_id' => '8915266e193949568460c2074db2443f',
                 'payment_id' => 1,
                 'registration_datetime_in' => '2019-09-18 13:00:00',
                 'registration_datetime_out' => '2019-09-18 16:00:00',
@@ -25,8 +25,8 @@ class RegistrationTableSeeder extends Seeder
             ],
             [
                 'id' => Uuid::uuid4()->getHex(),
-                'users_id' => '5f1afaa51f6545ca8e0525661810733a',
-                'event_id' => '1500ae41ff124f55a8317ef8c72602f2',
+                'user_id' => 2,
+                'event_id' => 'd39573e16abf4da693a1ca5757c4ac8b',
                 'payment_id' => 3,
                 'registration_datetime_in' => '2019-09-24 10:00:00',
                 'registration_datetime_out' => '2019-09-24 13:00:00',

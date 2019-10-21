@@ -20,10 +20,14 @@ use Illuminate\Http\Request;
 Route::group(['prefix' => 'v1', 'middleware' => 'cors'], function() {
 
     // users route
-    Route::get('users', 'api\UsersController@index');
+    Route::get('users', 'api\UserController@index');
+    Route::group(['middleware' => 'auth:api'], function() {
+        Route::get('user/{id}', 'api\UserController@show');
+        Route::put('user/edit/{id}', 'api\UserController@edit');
+    });
     Route::post('user/register', 'AuthController@store');
-    Route::post('user/signin', 'AuthController@sigin');
-
+    Route::post('user/signin', 'api\AuthController@sigin');
+    
     // event route
     Route::get('events', 'api\EventController@index');
     Route::get('event/{id}', 'api\EventController@show');
@@ -32,7 +36,7 @@ Route::group(['prefix' => 'v1', 'middleware' => 'cors'], function() {
     Route::delete('event/delete/{id}', 'api\EventController@destroy');
     Route::get('events/trash', 'api\EventController@trash');
     Route::get('event/restore/{id}', 'api\EventController@restore');
-
+    
     // categories route
     Route::get('categories', 'api\CategoriesController@index');
     Route::get('category/{id}', 'api\CategoriesController@show');
@@ -41,11 +45,11 @@ Route::group(['prefix' => 'v1', 'middleware' => 'cors'], function() {
     Route::delete('category/delete/{id}', 'api\CategoriesController@destroy');
     Route::get('categories/trash', 'api\CategoriesController@trash');
     Route::get('category/restore/{id}', 'api\CategoriesController@restore');
-
+    
     // registration route
     Route::get('registration', 'api\RegistrationController@index');
     Route::get('registration/{id}', 'api\RegistrationController@show');
-
+    
     // payment route
     Route::get('payments', 'api\PaymentController@index');
     Route::get('payment/{id}', 'api\PaymentController@show');

@@ -11,8 +11,12 @@ class Payment extends Model
     use SoftDeletes;
     protected $table = 'payment';
     protected $primaryKey = 'id';
-    protected $fillable = ['payment_name', 'payment_desc', 'payment_img'];
-    protected $guarded = ['created_at', 'updated_at'];
+    protected $fillable = [
+        'payment_name', 'payment_desc', 'payment_img',
+    ];
+    protected $guarded = [ 
+        'created_at', 'updated_at',
+    ];
     public $dates = ['deleted_at'];
     public $timestamps = true;
 

@@ -98,23 +98,6 @@ class EventTableSeeder extends Seeder
                 'event_registrant_quota' => 300,
                 'event_active' => 'active',
             ],
-            [
-                'id' => Uuid::uuid4()->getHex(),
-                'categories_id' => 8,
-                'event_name' => 'Gathering Ralali.com Q4',
-                'event_desc' => 'Liburna dan jalan-jalan semua karyawan Ralali.com',
-                'event_date_start' => '2019-12-20',
-                'event_date_end' => '2019-12-22',
-                'event_time_start' => '10:00:00',
-                'event_time_end' => '20:00:00',
-                'event_venue' => 'Puncak Bogor',
-                'event_address' => 'Ciloto, Cipanas, Cianjur Regency, West Java',
-                'event_latitude' => -6.701753,
-                'event_longitude' => 106.9990216,
-                'event_organizer' => 'Ralali.com',
-                'event_registrant_quota' => 300,
-                'event_active' => 'active',
-            ],
         ]);
     }
 }

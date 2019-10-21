@@ -165,6 +165,7 @@ return [
         /*
          * Package Service Providers...
          */
+        Laravel\Passport\PassportServiceProvider::class,
         Barryvdh\Cors\ServiceProvider::class, 
         Tymon\JWTAuth\Providers\JWTAuthServiceProvider::class, 
          

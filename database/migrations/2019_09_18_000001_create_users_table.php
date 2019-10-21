@@ -13,8 +13,8 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
-            $table->string('id', 32)->primary();
+        Schema::create('user', function (Blueprint $table) {
+            $table->bigIncrements('id');
             $table->string('first_name', 30);
             $table->string('last_name', 30);
             $table->date('date_of_birth');
@@ -37,6 +37,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('user');
     }
 }

@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\PaymentResource;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Payment;
-use App\Http\Resources\PaymentResource;
 
 class PaymentController extends Controller
 {
