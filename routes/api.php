@@ -17,7 +17,7 @@ use Illuminate\Http\Request;
 //     return $request->user();
 // });
 
-Route::group(['prefix' => 'v1', 'middleware' => 'cors'], function() {
+Route::group(['prefix' => 'v1', 'middleware' => 'cors'], function() { 
 
     // users route
     Route::get('users', 'api\UserController@index');

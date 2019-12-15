@@ -32,7 +32,7 @@ class AuthController extends Controller
             ];
             return response()->json($response, 400);
         }
-
+        
         $user = User::where([['email', request('email')],['password', crypt(request('password'), 'eventake2019pacegege')]])->first();
         if(!$user) {
             $response = [
